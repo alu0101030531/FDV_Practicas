@@ -14,26 +14,65 @@ Para abrir la escena demo que incluye el paquete de assets debemos dirigirnos a 
 
 ![alt text](https://github.com/alu0101030531/FDV_Practicas/blob/main/FDV_Prac1.1/Readme_Images/1.3.gif "Escena")
 
-Podremos observar que todos los GameObjects de la escena son de color rosa, esto se debe a que el asset que hemos importado está utilizando el pipeline de renderizado URP y en nuestro caso estamos utilizando el "built-in pipeline" al usar la plantilla 3D de Unity. Para poder ver los materiales correctamente tendremos que ir a **Edit > Project Settings > Graphics > URP Global Settings** y pinchar en fix y en Graphics, en **Scriptable Render pipeline Settings** usaremos el StarterAssetsURPAsset en lugar de None.
+Podremos observar que todos los GameObjects de la escena son de color rosa, esto se debe a que el asset que hemos importado está utilizando el pipeline de renderizado URP y en nuestro caso estamos utilizando el "Built-in pipeline" al usar la plantilla 3D de Unity. Para poder ver los materiales correctamente tendremos que ir a **Edit > Project Settings > Graphics > URP Global Settings** y pinchar en fix y en Graphics, en **Scriptable Render pipeline Settings** usaremos el StarterAssetsURPAsset en lugar de None.
 
 ![alt text](https://github.com/alu0101030531/FDV_Practicas/blob/main/FDV_Prac1.1/Readme_Images/1.4.gif "Rendering")
 
 ---
 ### Eliminar entorno
-Seleccionaremos todos los GameObject que conforman la escena y los eliminaremos, dejando el suelo para que el jugador no caiga infinitamente
+Seleccionaremos todos los GameObject que conforman la escena y los eliminaremos, dejando el suelo para que el jugador no caiga infinitamente.
 
 ![alt text](https://github.com/alu0101030531/FDV_Practicas/blob/main/FDV_Prac1.1/Readme_Images/2.gif "Removing environment")
 
 ---
 ### Incluir GameObjects
-Incluiremos ahora una rampa y un cubo creando una nueva composición
+Incluiremos ahora una **rampa y un cubo** creando una nueva composición.
 
 ![alt text](https://github.com/alu0101030531/FDV_Practicas/blob/main/FDV_Prac1.1/Readme_Images/3.gif "Adding GameObjects")
 
 ---
 ### Incluir GameObjects de la Asset Store
-En este caso se ha optado por incluir un GameObject de una moneda en lo alto del cubo
+En este caso, se ha optado por incluir un **GameObject de una moneda** en lo alto del cubo.
 
 ![alt text](https://github.com/alu0101030531/FDV_Practicas/blob/main/FDV_Prac1.1/Readme_Images/4.gif "Importing Coin")
 
 ![alt text](https://github.com/alu0101030531/FDV_Practicas/blob/main/FDV_Prac1.1/Readme_Images/4.1.gif "Adding Coin")
+
+---
+### Convertir uno de los GameObjects incluido en el personaje
+Se ha cambiado la geometría del personaje para que se **muestre un cubo**, aprovechando así la lógica del movimiento ya programada.
+
+![alt text](https://github.com/alu0101030531/FDV_Practicas/blob/main/FDV_Prac1.1/Readme_Images/5.gif "Cube Moving")
+
+---
+### Agregar fuente de iluminación
+Se ha añadido una fuente de iluminación y se han modificado los parámetros de **Emission > Color** a un color **verde** y se ha aumentado **Emission > Intensity** para poder observar con mayor facilidad el color de la luz.
+
+![alt text](https://github.com/alu0101030531/FDV_Practicas/blob/main/FDV_Prac1.1/Readme_Images/6.gif "Luz")
+
+---
+### Generar script que muestre por consola un mensaje
+Por último, se ha añadido un script para mostrar en el Start del mismo "Hello World" por consola.
+
+```
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class HelloWorld : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        Debug.Log("Hello World");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+     
+    }
+}
+```
+
+![alt text](https://github.com/alu0101030531/FDV_Practicas/blob/main/FDV_Prac1.1/Readme_Images/7.gif "Script")
