@@ -91,6 +91,39 @@ funcione correctamente
 ![image](https://github.com/alu0101030531/FDV_Practicas/assets/43813200/d98c4d23-6bbc-4b78-a187-fa02473838f5)
 ![alt-text](https://github.com/alu0101030531/FDV_Practicas/blob/main/FDV_Prac3/Readme_Images/2.gif "waypoint")
 ![alt-text](https://github.com/alu0101030531/FDV_Practicas/blob/main/FDV_Prac3/Readme_Images/3.gif "waypoint")
+## Movimiento usando rigidbody
+Utilizamos el método rigidbody.AddForce para mover la cápsula en el eje x y z
+```
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MoveRigidbody : MonoBehaviour
+{
+    private Rigidbody p_rigidbody;
+    float speed = 100f;
+    // Start is called before the first frame update
+    void Start()
+    {
+       p_rigidbody = GetComponent<Rigidbody>(); 
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    void FixedUpdate()
+    {
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+
+        p_rigidbody.AddForce(horizontal * speed * Time.fixedDeltaTime, 0f, vertical * speed * Time.fixedDeltaTime);
+    }
+}
+```
+![alt-text](https://github.com/alu0101030531/FDV_Practicas/blob/main/FDV_Prac3/Readme_Images/4.gif "rigidbody")
 
 
 
