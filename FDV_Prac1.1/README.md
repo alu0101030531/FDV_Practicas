@@ -76,3 +76,15 @@ public class HelloWorld : MonoBehaviour
 ```
 
 ![alt text](https://github.com/alu0101030531/FDV_Practicas/blob/main/FDV_Prac1.1/Readme_Images/7.gif "Script")
+
+## GIT LFS
+Se ha utilizado git lfs para subir el .zip del proyecto, para ello se ha utilizado el siguiente comando
+```
+git lfs track "*.zip"
+```
+Una vez ejecutado este comando se nos crea un fichero .gitattributes
+![image](https://github.com/alu0101030531/FDV_Practicas/assets/43813200/9680af4f-9eea-4837-a20b-fbf90be7e77a)
+
+
+
+
