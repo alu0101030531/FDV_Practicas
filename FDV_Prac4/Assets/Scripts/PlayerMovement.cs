@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     {
        float x = Input.GetAxis("Horizontal");
        float z = Input.GetAxis("Vertical");
+       // Adding comment
 
        transform.Translate(x * speed * Time.deltaTime, 0f, z * speed * Time.deltaTime);
     }
