@@ -8,32 +8,31 @@ public class MoveTowards : MonoBehaviour
     public float rotationSpeed = 20;
     private float threshold = .1f;
     public Transform goal; 
-    bool move_towards = false;
-    void Start()
-    {
-        PlayerMovement.OnBorderEnter += OnBorderEnter;
-    }
 
-    void OnBorderEnter()
+    public virtual void Start()
     {
-        move_towards = true;
+        enabled = false;     
     }
 
     Vector3 GetGoalDirection() {
         return goal.position - transform.position;
     }
 
+    public void Move()
+    {
+        Vector3 direction = GetGoalDirection();
+        if (direction.magnitude >= threshold) {
+            transform.LookAt(goal.position);
+            Debug.DrawRay(this.transform.position, direction.normalized, Color.red);
+            transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
+       }
+
+    }
+
+
     // Update is called once per frame
     void Update()
     {
-        if (move_towards)
-        {
-            Vector3 direction = GetGoalDirection();
-            if (direction.magnitude >= threshold) {
-                transform.LookAt(goal.position);
-                Debug.DrawRay(this.transform.position, direction.normalized, Color.red);
-                transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
-            }
-        }
+      
     }
 }

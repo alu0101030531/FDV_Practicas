@@ -74,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.tag == "Terrain")
         {
+            Debug.Log("a");
             OnBorderEnter();
         }
     }
