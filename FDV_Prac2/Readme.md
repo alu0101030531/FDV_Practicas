@@ -1,6 +1,7 @@
 # Vectores y movimiento en línea recta
 
-La clase MoveTowards nos permite establecer un objetivo y moverlo hacia él utilizando LookAt y Translate
+La clase MoveTowards nos permite establecer un objetivo y moverlo hacia él utilizando LookAt y Translate.
+Hacemos uso del Debug.DrawRay para dibujar un rayo en la dirección de movimiento del cuadrado
 ```
 using System.Collections;
 using System.Collections.Generic;
@@ -31,6 +32,7 @@ public class MoveTowards : MonoBehaviour
     }
 }
 ```
+Añadimos una clase CameraMovement para poder mover la cámara con el ratón, utilizamos Mouse X y Mouse Y.
 ```
 using System.Collections;
 using System.Collections.Generic;
@@ -58,6 +60,8 @@ public class CameraMovement : MonoBehaviour
     }
 }
 ```
+![alt-text](https://github.com/alu0101030531/FDV_Practicas/blob/main/FDV_Prac2/Readme_Images/1.gif "Seguimiento")
+![alt-text](https://github.com/alu0101030531/FDV_Practicas/blob/main/FDV_Prac2/Readme_Images/2.gif "DrawRay")
 ```
 using System.Collections;
 using System.Collections.Generic;
@@ -83,8 +87,10 @@ public class RunAway : MonoBehaviour
     }
 }
 ```
-![alt-text](https://github.com/alu0101030531/FDV_Practicas/blob/main/FDV_Prac2/Readme_Images/1.gif "Seguimiento")
-![alt-text](https://github.com/alu0101030531/FDV_Practicas/blob/main/FDV_Prac2/Readme_Images/2.gif "DrawRay")
+Implementamos una clase que nos permita mover al jugador usando las teclas wasd sin simulación física, agregamos la velocidad como una variable pública que podemos ajustar desde el inspector. En El update detectamos
+si se pulsa la tecla espacio y en ese caso aumentamos la velocidad de movimiento
+
+Añadimos unas esferas a la escena con la tag de "Ball" y cuando colisionamos con estas les cambiamos el color y le damos una fuerza con Add.Force()
 ```
 using System.Collections;
 using System.Collections.Generic;
@@ -174,6 +180,7 @@ public class PlayerMovement : MonoBehaviour
     }
 }
 ```
+Aquí controlamos que la pelota está en el suelo y reseteamos el score del jugador
 ```
 using System.Collections;
 using System.Collections.Generic;
