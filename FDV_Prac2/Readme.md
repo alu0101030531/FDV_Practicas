@@ -1,4 +1,6 @@
 # Vectores y movimiento en línea recta
+
+La clase MoveTowards nos permite establecer un objetivo y moverlo hacia él utilizando LookAt y Translate
 ```
 using System.Collections;
 using System.Collections.Generic;
