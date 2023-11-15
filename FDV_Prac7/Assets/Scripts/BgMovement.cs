@@ -9,9 +9,12 @@ public class BgMovement : MonoBehaviour
     public Vector2 initialPos = new Vector2(0f, 0f);
     public GameObject background_texture;
     public GameObject[] background_layers;
+    public GameObject[] parallaxb_background_layers;
+    public float textureSpeed_factor = 0.01f;
     public float speed_factor = 11f;
     public float speed = 12f;
     private List<GameObject> background_layers_instances;
+    private List<GameObject> parallaxb_background_instances;
     private GameObject first_background;
     private GameObject second_background;
     private GameObject test;
@@ -41,6 +44,13 @@ public class BgMovement : MonoBehaviour
                     bg_1.name = "first";
                     background_layers_instances.Add(bg_1);
                     background_layers_instances.Add(Instantiate(background_layer, initialPos + new Vector2(background_layer.transform.position.x, background_layer.transform.position.y) + new Vector2(GetBackgroundSize(bg_1)["gameObjectMaxSize"] * 2f, 0f), Quaternion.identity) as GameObject);
+                }
+                break;
+            case 4:
+                parallaxb_background_instances = new List<GameObject>();
+                foreach(GameObject background_layer in parallaxb_background_layers) {
+                    GameObject bg_1 = Instantiate(background_layer, initialPos + new Vector2(background_layer.transform.position.x, background_layer.transform.position.y), Quaternion.identity) as GameObject;
+                    parallaxb_background_instances.Add(bg_1);
                 }
                 break;
         }
@@ -107,13 +117,9 @@ public class BgMovement : MonoBehaviour
 
     }
 
-    void BackgroundTextureScroll() {
-        Material mat = test.GetComponent<Renderer>().sharedMaterial;
-        mat.mainTextureOffset += new Vector2(0.01f * Time.deltaTime, 0f);
-    }
-
-    void ParallaxA() {
-
+    void BackgroundTextureScroll(GameObject bg, float texture_speed) {
+        Material mat = bg.GetComponent<Renderer>().sharedMaterial;
+        mat.mainTextureOffset += new Vector2(texture_speed * Time.deltaTime, 0f);
     }
 
     // Update is called once per frame
@@ -127,7 +133,7 @@ public class BgMovement : MonoBehaviour
                 BackgroundScrollB();
                 break;
             case 2:
-                BackgroundTextureScroll();
+                BackgroundTextureScroll(test, textureSpeed_factor);
                 break;
             case 3:
                 float currentSpeed = speed;
@@ -141,6 +147,12 @@ public class BgMovement : MonoBehaviour
                 }
                 break;
             case 4:
+                float testSpeed = textureSpeed_factor;
+                for (int background_index = parallaxb_background_instances.Count - 1; background_index >= 0; background_index--) {
+                    Debug.Log(background_index);
+                    BackgroundTextureScroll(parallaxb_background_instances[background_index], testSpeed);
+                    testSpeed += textureSpeed_factor * 2f;
+                }
                 break;
         }
     }

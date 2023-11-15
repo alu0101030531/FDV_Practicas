@@ -2784,7 +2784,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.31
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2809,7 +2809,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.207879, y: -2.5000005, z: -10}
+  m_LocalPosition: {x: 47.033455, y: -5.372054, z: -39.46966}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3271,9 +3271,13 @@ MonoBehaviour:
   background_layers:
   - {fileID: 3031069056649735160, guid: b5e22bfbd69790141801f32bca908bc4, type: 3}
   - {fileID: 1868150036849036118, guid: 5de392967d2633247a929280b0ae114a, type: 3}
+  parallaxb_background_layers:
+  - {fileID: 7650214079880005963, guid: 31dd647b00588ad449979b56f3c174d6, type: 3}
+  - {fileID: 5912592416917382473, guid: b6c19d05bc29a7e419670b5194d7348b, type: 3}
+  textureSpeed_factor: 0.1
   speed_factor: 2
   speed: 4
-  BackgroundMode: 3
+  BackgroundMode: 4
 --- !u!114 &956055432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3287,6 +3291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vcam: {fileID: 2127658515}
+  zoom_factor: 0.01
 --- !u!1 &1220907343
 GameObject:
   m_ObjectHideFlags: 0
