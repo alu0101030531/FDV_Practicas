@@ -1,10 +1,13 @@
 # SONIDO EN UNITY
 ## Añadir AudioSource a una esfera y reproducir en bucle y desde que comience la escena
 Le añadimos el componente AudioSource a una de las esferas y marcamos Play On Awake y Loop
-##Captura de pantalla
+
+![Captura de pantalla 2023-12-03 163851](https://github.com/alu0101030531/FDV_Practicas/assets/43813200/51946f89-a9b0-4315-8510-a31b64af2728)
+
 
 ## Crear una fuente de audio con el efecto doppler activado
-##Captura de pantalla
+![image](https://github.com/alu0101030531/FDV_Practicas/assets/43813200/a8ac6ad8-7c44-4f8d-8e34-e74f2e38ab37)
+
 El efecto doppler lo podemos configurar utilizando el volumen rolloff, con la controlar la caída en volumen, spread para determinar el ángulo de propagación del sonido y el nivel de Doppler que modifica cuánto efecto doppler se aplica.
 
 ```
@@ -36,14 +39,16 @@ public class Movement : MonoBehaviour
 ```
 ##  Configurar un mezclador de sonidos
 Añadimos dos grupos uno music y otro spatial, añadimos el efecto de echo a spatial y SFX Reverb a music
-##Caputar
-##Captura output
+![Captura de pantalla 2023-12-03 165657](https://github.com/alu0101030531/FDV_Practicas/assets/43813200/0a5817e8-dd9f-4563-be4c-69c080e534ae)
+
+![Captura de pantalla 2023-12-03 165712](https://github.com/alu0101030531/FDV_Practicas/assets/43813200/0ec32d9b-ed6b-4aac-b83c-ef820d525678)
+
 
 ## Audio vía Scripts
 
 ## Implementar un script que al pulsar la tecla p accione el movimiento de una esfera en la escena y reproduzca un sonido en bucle hasta que se pulse la tecla s.
 Creamos un script que en el update registre las teclas p y s. Cuando se pulse la p reproduce un sonido y activa el movimientos del GameObject, cuando se pulsa la s para el sonido y el movimiento
-
+![alt-text](https://github.com/alu0101030531/FDV_Practicas/blob/main/FDV_Prac8/Readme_Images/1.gif "1")
 ```
 using System.Collections;
 using System.Collections.Generic;
@@ -124,6 +129,8 @@ public class BallCollision : MonoBehaviour
 ## Agregar un sonido de fondo a la escena que se esté reproduciendo continuamente desde que esta se carga. Usar un mezclador para los sonidos.
 
 Agregamos un sonido con el spacial blend en 2D y utilizamos el Grupo del Audio Mixer de  music
+![Captura de pantalla 2023-12-03 174418](https://github.com/alu0101030531/FDV_Practicas/assets/43813200/f54578d0-1423-43e2-b5a4-5beaff291629)
+
 
 ## Crear un script para simular el sonido que hace el cubo-player cuando está movimiento en contacto con el suelo (mecánica para reproducir sonidos de pasos).
 Comprobamos si el player se está moviendo, si ya hemos ejecutado el sonido no hacemos nada, en caso de que estemos parados volvemos a poner walking a false y paramos el sonido
@@ -194,7 +201,8 @@ public class PlayerMovement : MonoBehaviour
 ```
 
 ## En tu escena 2D activa un sonido cada vez que el jugador alcance una nueva plataforma.
-Cada vez que colisionemos con el jugador activamos un sonido 
+Cada vez que colisionemos con el jugador activamos un sonido
+![alt-text](https://github.com/alu0101030531/FDV_Practicas/blob/main/FDV_Prac8/Readme_Images/2.gif "1")
 ```
 public class BallCollision : MonoBehaviour
 {
