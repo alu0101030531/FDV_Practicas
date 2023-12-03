@@ -8,6 +8,7 @@ public class LoopUntilKeyPress : MonoBehaviour
     public float speed = 12f;
     public float initialX;
     public float threshold = 5f;
+    public string play_key = "p";
     private bool move = false;
     private AudioSource _MyAudioSource;
     void Start()
@@ -19,8 +20,8 @@ public class LoopUntilKeyPress : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if (Input.GetKeyDown("p")) {
-        Debug.Log("p");
+       if (Input.GetKeyDown(play_key)) {
+            _MyAudioSource.Play(0);
             move = true;
        }
        if (Input.GetKeyDown("s")) {
@@ -31,7 +32,6 @@ public class LoopUntilKeyPress : MonoBehaviour
             if (transform.position.x >= initialX + threshold || transform.position.x <= initialX - threshold) { 
                 speed = -speed;
             }
-            _MyAudioSource.Play();
             float movement = speed * Time.deltaTime;
             transform.Translate(new Vector3(movement, 0f, movement));
        }
